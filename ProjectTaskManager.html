@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="TaskManager.css">
+</head>
+<body>
+
+<header>
+  <h1>Task Manager</h1>
+  <p>Stay organised — add, complete, and track your tasks</p>
+</header>
+
+<div class="container">
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num" id="stat-total">0</div>
+      <div class="stat-label">Total</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="stat-pending" style="color:#e67e22">0</div>
+      <div class="stat-label">Pending</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num" id="stat-done" style="color:#27ae60">0</div>
+      <div class="stat-label">Completed</div>
+    </div>
+  </div>
+
+  <div class="form-card">
+    <h2>Add a New Task</h2>
+    <div class="form-row">
+      <input type="text" id="task-input" placeholder="Enter task title..." maxlength="80" />
+      <select id="priority-select">
+        <option value="medium">Medium priority</option>
+        <option value="high">High priority</option>
+        <option value="low">Low priority</option>
+      </select>
+      <button class="btn-add" onclick="addTask()">Add Task</button>
+    </div>
+    <div class="error-msg" id="error-msg">Please enter a task title before adding.</div>
+  </div>
+
+  <div class="filter-row">
+    <button class="filter-btn active" onclick="setFilter('all', this)">All</button>
+    <button class="filter-btn" onclick="setFilter('pending', this)">Pending</button>
+    <button class="filter-btn" onclick="setFilter('done', this)">Completed</button>
+    <button class="filter-btn" onclick="setFilter('high', this)">High Priority</button>
+  </div>
+
+  <div class="task-list" id="task-list"></div>
+
+  <footer>Built with HTML, CSS &amp; JavaScript &nbsp;|&nbsp; Padmanathan R</footer>
+</div>
+
+<script src="TaskManager.js"></script>
+
+</body>
+</html>
